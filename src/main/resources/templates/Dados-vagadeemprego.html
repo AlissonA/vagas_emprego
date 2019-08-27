@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Vagas de Emprego</title>
+<style>
+    .fundo{
+        background-color: darkcyan;
+    }
+</style>
+</head>
+<body class="fundo">
+    <div class="jumbotron text-center">
+        <h1>DADOS CADASTRADOS</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-2">
+          </div>
+          <div class="col-sm-8 text-center fundo">
+          		<p><Strong>Nome da Empresa:</Strong></p>
+				<p th:text="${emprego.nomeEmpresa}"></p>
+
+          		<p><Strong>CNPJ:</Strong></p>
+				<p th:text="${emprego.cnpj}"></p>
+
+          		<p><Strong>Função</Strong></p>
+				<p th:text="${emprego.funcao}"></p>
+
+          		<p><Strong>Vagas Disponíveis:</Strong></p>
+				<p th:text="${emprego.vagasDisponiveis}"></p>
+
+          		<p><Strong>Carga Horária:</Strong></p>
+				<p th:text="${emprego.cargaHoraria}"></p>
+
+          		<p><Strong>Salário:</Strong></p>
+				<p th:text="${emprego.salario}"></p>				
+				
+          		<p><Strong>Requisitos:</Strong></p>
+				<p th:text="${emprego.requisitos}"></p>				
+				
+          		<p><Strong>Contato(s):</Strong></p>
+				<p th:text="${emprego.contatos}"></p>
+				
+				<br>		
+				<a href="/paginainicial" class="btn btn-secondary">CADASTRAR NOVA VAGA</a>
+				<br>
+				<br>		
+				<a href="/vagascadastradas" class="btn btn-secondary">VAGAS CADASTRADAS</a>
+				<br>				
+				
+          </div>
+          <div class="col-sm-2">
+          </div>
+        </div>
+      </div>
+</body>
+</html>

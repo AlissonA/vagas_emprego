@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Vagas de Emprego</title>
+<style>
+    .fundo{
+        background-color: darkcyan;
+    }
+</style>
+</head>
+<body class="fundo">
+    <div class="jumbotron text-center">
+        <h1>CADASTRAR VAGAS DE EMPREGO</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-2">
+          </div>
+          <div class="col-sm-8 text-center fundo">
+                <form th:object="${emprego}" th:action="@{/editar}" method="post">
+                   <strong>Nome da Empresa:</strong>
+                    <input th:type="hidden" th:field="*{id}">
+                    <br><input type="text" th:field="*{nomeEmpresa}">
+                    <br>
+                    <div class="alert alert-danger" th:errors="*{nomeEmpresa}">  
+                    </div>                    
+                    <br>
+                    <strong>Documento (CNPJ)</strong>
+                    <br><input type="text" th:field="*{cnpj}">
+                    <br>
+					<div class="alert alert-danger" th:errors="*{cnpj}">  
+                    </div>                    
+                    <br>
+                    <strong>Função:</strong>
+                    <br><input type="text" th:field="*{funcao}">
+                    <br>
+                    <div class="alert alert-danger" th:errors="*{funcao}">  
+                    </div>
+                    <br>
+                    <strong>Vagas Disponíveis:</strong>
+                    <br><input type="text" th:field="*{vagasDisponiveis}">
+                    <br>
+                    <div class="alert alert-danger" th:errors="*{vagasDisponiveis}">  
+                    </div>
+                    <br>
+                    <strong>Carga Horária:</strong>
+                    <br><input type="text" th:field="*{cargaHoraria}">
+                    <br>
+                    <div class="alert alert-danger" th:errors="*{cargaHoraria}">  
+                    </div>
+                    <br>
+                    <strong>Salário:</strong>
+                    <br><input type="text" th:field="*{salario}">
+                    <br>
+                    <div class="alert alert-danger" th:errors="*{salario}">  
+                    </div>
+                    <br>
+                    <strong>Requisitos:</strong>
+                    <br><input type="text" th:field="*{requisitos}">
+                    <br>
+                    <div class="alert alert-danger" th:errors="*{requisitos}">  
+                    </div>
+                    <br>
+                    <strong>Contato(s):</strong>
+                    <br><input type="text" th:field="*{contatos}">
+                   	<br>
+                    <div class="alert alert-danger" th:errors="*{contatos}">  
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-primary">CADASTRAR</button>
+                </form>
+          </div>
+          <div class="col-sm-2">
+          </div>
+        </div>
+      </div>
+</body>
+</html>
